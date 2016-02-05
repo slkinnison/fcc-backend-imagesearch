@@ -1,39 +1,99 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FreeCodeCamp - Image Search Microservice by Stephen Kinnison</title>
+	<link rel='stylesheet prefetch' href='//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="/public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
 
-	<head>
-		<title>Clementine.js - The elegant and lightweight full stack JavaScript boilerplate.</title>
-		
-		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
-	</head>
-
-	<header>
-		<p>Welcome, <span id="display-name"></span>!</p>
-		<a class="menu" href="/profile">Profile</a>
-		<p>|</p>
-		<a class="menu" href="/logout">Logout</a>
-	</header>
-
-	<body>
-		<div class="container">
-			<img src="/public/img/clementine_150.png" />
-			<br />
-			<p class="clementine-text">Clementine.js</p>
-		</div>
-	
-		<div class="container">
-			<p>You have clicked the button <span id="click-nbr"></span> times.</p>
-			<br />
-			<div class="btn-container">
-				<button type="submit" class="btn btn-add">CLICK ME!</button>
-				<button class="btn btn-delete">RESET</button>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<p class="navbar-brand">Image Search Microservice</p>
 			</div>
 		</div>
-		
-		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/clickController.client.js"></script>
-		<script type="text/javascript" src="controllers/userController.client.js"></script>
-	</body>
+	</nav>
 
+	<div class="container">
+		<h1 class="header">
+			API Basejump: Image search microservice
+		</h1>
+		<blockquote>
+			User stories:
+			<ul>1) I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</ul>
+			<ul>2) I can paginate through the responses by adding a ?offset=2 parameter to the URL.</ul>
+			<ul>3) I can get a list of the most recently submitted search strings.</ul>
+		</blockquote>
+		<h3>Search usage:</h3>
+		<code>https://fcc-backend-imagesearch-slkinnison.c9users.io/api/imagesearch/bible</code><br>
+		<code>https://fcc-backend-imagesearch-slkinnison.c9users.io/api/imagesearch/bible?offset=2</code>
+		<h3>Search output:</h3>
+		<code>
+				[
+					{
+					    "url": "https://openclipart.org/image/2400px/svg_to_png/238625/Prismatic-Low-Poly-Jesus-Christ.png",
+					    "snippet": "Prismatic Low Poly Jesus Christ",
+					    "thumbnail": "https://openclipart.org/image/250px/svg_to_png/238625/Prismatic-Low-Poly-Jesus-Christ.png",
+					    "context": "https://openclipart.org/detail/238625/Prismatic%20Low%20Poly%20Jesus%20Christ"
+					},
+					{
+					    "url": "https://openclipart.org/image/2400px/svg_to_png/236720/Holy-Bible.png",
+					    "snippet": "Holy Bible",
+					    "thumbnail": "https://openclipart.org/image/250px/svg_to_png/236720/Holy-Bible.png",
+					    "context": "https://openclipart.org/detail/236720/Holy%20Bible"
+					}
+				]
+		</code>
+		<h3>History usage:</h3>
+		<code>https://fcc-backend-imagesearch-slkinnison.c9users.io/api/latest/imagesearch/</code><br>
+		<h3>History output:</h3>
+		<code>
+				[
+					{
+					    "term": "bible",
+					    "when": "2016-02-05T02:04:15.284Z"
+					},
+					{
+					    "term": "church",
+					    "when": "2016-02-05T01:31:23.255Z"
+					}
+				]
+		</code>
+	</div>
+	<!-- /.container -->
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Personal Bio</h4>
+					<p>I am a experienced software engineer who is dabbling in web
+						design. I have a proven track record of leading and implementing
+						multiple successful projects.</p>
+				</div>
+				<div class="col-md-6">
+					<h4>Connect</h4>
+					<p>
+						<a href="https://www.linkedin.com/in/stephenkinnison"
+							target="_blank"><i class="fa fa-linkedin fa-fw"></i> Linkedin</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
 </html>
