@@ -23,6 +23,7 @@ and browse recent search queries like this: https://cryptic-ridge-9197.herokuapp
 * NodeJS
 * Express
 * Clementine.js
+* https://openclipart.org/developers - OpenClipart REST API
 
 ## License
 
